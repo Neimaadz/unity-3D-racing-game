@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class carController : MonoBehaviour
 {
+    [SerializeField] private float speed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,19 +17,19 @@ public class carController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.forward * 1f);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.back * 1f);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * speed);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.left * 1f);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * speed);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.right * 1f);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * speed);
         }
     }
 }
