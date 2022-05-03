@@ -25,11 +25,11 @@ public class carController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * speed);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * speed/3);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * speed);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * speed/3);
         }
     }
 }
